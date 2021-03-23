@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  error:
+    path: /error
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MariaDBDialect
+  datasource:
+    url: jdbc:mariadb://localhost:3306/NOTES_APP
+    username: root
+    password: mariadb@r00t
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jws-algorithm: 282837789600-hsr8hqg19nelomtqkhcebcbeebg10eqj.apps.googleusercontent.com
+      client:
+        registration:
+          google:
+            clientId: 282837789600-hsr8hqg19nelomtqkhcebcbeebg10eqj.apps.googleusercontent.com
+            clientSecret: c8W3djccTFU8uCi3XES-176a
+
+logging.level.org.springframework.security: debug
