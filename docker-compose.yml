@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+    - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - backend
+  db:
+    image: mariadb:10.5
+    environment:
+      MYSQL_ROOT_PASSWORD: mariadb@r00t
+      MYSQL_DATABASE: NOTES_APP
+    networks:
+      - backend
+
+networks:
+  backend:
