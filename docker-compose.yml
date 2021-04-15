@@ -18,6 +18,10 @@ services:
       MYSQL_DATABASE: NOTES_APP
     networks:
       - backend
+    volumes:
+      - db_data:/var/lib/mysql
 
 networks:
   backend:
+volumes:
+    db_data:

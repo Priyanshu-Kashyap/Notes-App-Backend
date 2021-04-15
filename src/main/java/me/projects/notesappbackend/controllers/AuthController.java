@@ -34,7 +34,7 @@ public class AuthController {
     this.bCryptPasswordEncoder = bCryptPasswordEncoder;
   }
 
-  @GetMapping("oauth2/user")
+  @GetMapping("oauth2user")
   public ResponseEntity<?> oAuth2User(@AuthenticationPrincipal OAuth2User principal) {
     return ResponseEntity.ok(userDetailService.saveOAuth2User(principal));
   }
@@ -60,9 +60,5 @@ public class AuthController {
     return ResponseEntity.ok(userDetailService.save(signupRequest));
   }
 
-  @GetMapping("hello")
-  public String hello() {
-    return "hello";
-  }
 
 }
